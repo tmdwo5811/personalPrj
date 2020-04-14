@@ -4,6 +4,7 @@
   "description": "개인 프로젝트 입니다.",
   "main": "app.js",
   "dependencies": {
+    "connect": "^3.7.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.7",
     "rewire": "^5.0.0"
