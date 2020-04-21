@@ -25,6 +25,7 @@ db.once('open', function callback () {
   	console.log("open: success");
 });
 
+// back-end part
 // creates DB schema for MongoDB / requires 'username' & 'message'
 var userSchema = mongoose.Schema({
     username: 'string',
