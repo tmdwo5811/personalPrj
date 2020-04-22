@@ -7,6 +7,7 @@ var connect = require('connect');
 var app = connect();
 var socketio = require('socket.io');
 
+// back-end part
 // open mongoose
 var mongoose = require('mongoose');
 
@@ -32,9 +33,11 @@ var userSchema = mongoose.Schema({
     message: 'string'
 });
 
+// back-end part
 // compiles our schema into a model
 var Chat = mongoose.model('Chat', userSchema);
 
+// client part
 // request from web browser
 app.use('/', function(req,res,next){
 	if(req.url != '/favicon.ico'){
@@ -46,15 +49,18 @@ app.use('/', function(req,res,next){
 	}
 });
 
+// client part
 // creates server
 var server = http.createServer(app);
 server.listen(8008, function(){
 	console.log('server listen on port 8008');
 });
 
+// back-end part
 // creates WebSocket Server
 var io = socketio.listen(server);
 
+// back-end part
 // executed on connection
 io.sockets.on('connection', function(socket) {
 
